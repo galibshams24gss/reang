@@ -1,0 +1,55 @@
+<div class="container">
+        <div class="row">
+                <div class="col-md-12 jumbotron">
+                    <div class="text-center">
+                        <h1>Dream comes true indeed</h1>
+                        <p><b>Because our clients are our only focus and priority, we do care our clients</b></p>
+    
+                        <div class="form-group">
+                                <a class="btn btn-warning" href="#!crud">CRUD</a>
+                                <a class="btn btn-danger" href="#!tracker">DreamTracker</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+<section id="carousel" ng-carousel
+    ng-swipe-right="curSlide=curSlide-1" 
+    ng-swipe-left="curSlide=curSlide+1">
+
+    <ul>
+      <li><img src="2_gvjxqa.jpg" />
+      <li><img src="home-banner-montclair.jpg" />
+      <li><img src="bigstock-Luxury-house-at-dusk-in-Vancou-26752334-1600x750.jpg" />
+      <li><img src="gallery_01372828802.jpg" />
+      <li><img src="houses-e1474334531765-1024x494.jpg" />
+      <li><img src="img_Chepstow_Drive_33__Castle_Hill_-Facade_Dusk-1-.jpg" />
+    </ul>
+    
+    <div id="prev-button" ng-click="curSlide=curSlide-1"> &lt; </div>
+    <div id="next-button" ng-click="curSlide=curSlide+1">&gt; </div>
+</section>
+
+<!-- Footer -->
+<footer id="footer">
+        <p>Made by <a href="https://www.facebook.com/galib.shams">Galib Shams Sunny</a>.</p>
+        <p>Code released under the <a href="https://github.com">Github</a>.</p>
+        <p>© 2018 Copyright:
+                <a href="https://www.google.com"> MyRealEstate.com.au</a>
+        </p>
+
+  </footer>
+<!-- Footer -->
+</div>
+
+<script>
+    $(".slideshow>li:gt(0)").hide();
+    setInterval(function(){
+        $('.slideshow>li:first')
+        .fadeOut(700)
+        .next()
+        .fadeIn(700)
+        .end()
+        .appendTo('.slideshow');
+    }, 3000);
+</script>

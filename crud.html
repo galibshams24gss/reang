@@ -1,0 +1,246 @@
+<div class="container">
+    <hr>
+        <button type="button" class="btn btn-success pull-right" data-toggle="modal" data-target="#myModal">INSERT</button>
+        <hr>
+        <h3>Current Real Estates</h3>
+            <div class="clearfix"></div>
+        <hr>
+            
+        <div class="alert alert-info alert-dismissible" role="alert" ng-if="info">
+          <button type="button" class="close" aria-label="Close"><span aria-hidden="true" ng-click="clearInfo()">&times;</span></button>
+          {{info}}
+        </div>
+            <table class="gridtable">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>TYPE</th>
+                <th>ADDRESS</th>
+                <th>PURPOSE</th>
+                <th>STATUS</th>
+                <th>Action1</th>
+                <th>Action2</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="property in properties">
+                <td>{{ $index+1 }}</td>
+                <td>{{property.type}}</td>
+                <td>{{property.address}}</td>
+                <td>{{property.purpose}}</td>
+                <td>{{property.status}}</td>
+                <td> <button class="btn btn-warning"  type="button" data-toggle="modal" data-target="#myModalEdit" ng-click="selectProperty(property)">EDIT</button> </td>
+                <td> <button class="btn btn-danger" type="button" data-toggle="modal" data-target="#myModalDelete" ng-click="selectProperty(property)">DELETE</button> </td>
+              </tr>		      
+            </tbody>
+          </table>
+        </div>
+
+        <hr>
+        <div class="row">
+            <div class="col-md-4">
+              <div class="thumbnail">
+                <a href="2_gvjxqa.jpg" target="_blank">
+                  <img src="2_gvjxqa.jpg" alt="Lights" style="width:100%">
+                  <div class="caption">
+                    <p>5 Nenagh St, North Manly, NSW-2100</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="thumbnail">
+                <a href="home-banner-montclair.jpg" target="_blank">
+                  <img src="home-banner-montclair.jpg" alt="Nature" style="width:100%">
+                  <div class="caption">
+                    <p>180 Haldon St, Lakemba, NSW-2195</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="thumbnail">
+                <a href="bigstock-Luxury-house-at-dusk-in-Vancou-26752334-1600x750.jpg" target="_blank">
+                  <img src="bigstock-Luxury-house-at-dusk-in-Vancou-26752334-1600x750.jpg" alt="Fjords" style="width:100%">
+                  <div class="caption">
+                    <p>56 Browning St, Kingsbury, VIC-3083</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-md-4">
+                <div class="thumbnail">
+                  <a href="gallery_01372828802.jpg" target="_blank">
+                    <img src="gallery_01372828802.jpg" alt="Lights" style="width:100%">
+                    <div class="caption">
+                      <p>16 Dunne St, Kingsbury VIC-3083</p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="thumbnail">
+                  <a href="houses-e1474334531765-1024x494.jpg" target="_blank">
+                    <img src="houses-e1474334531765-1024x494.jpg" alt="Nature" style="width:100%">
+                    <div class="caption">
+                      <p>44 Raglan St, Preston, VIC-3072</p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="thumbnail">
+                  <a href="img_Chepstow_Drive_33__Castle_Hill_-Facade_Dusk-1-.jpg" target="_blank">
+                    <img src="img_Chepstow_Drive_33__Castle_Hill_-Facade_Dusk-1-.jpg" alt="Fjords" style="width:100%">
+                    <div class="caption">
+                      <p>17 Berkeley Rd, Wollongong, NSW-2500</p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+          </div>
+
+<!-- Footer -->
+<footer id="footer">
+    <p>Made by <a href="https://www.facebook.com/galib.shams">Galib Shams Sunny</a>.</p>
+    <p>Code released under the <a href="https://github.com">Github</a>.</p>
+    <p>© 2018 Copyright:
+            <a href="https://www.google.com"> MyRealEstate.com.au</a>
+    </p>
+
+</footer>
+<!-- Footer -->
+    
+    <!-- Modal -->
+    <div id="myModal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+    
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">New Property Registration</h4>
+          </div>
+          <div class="modal-body">
+            <form class="form-horizontal">
+              <div class="form-group">
+                <label for="inputPurpose3" class="col-sm-2 control-label">Type</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="inputPurpose3" placeholder="Type" ng-model="newProperty.type">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="inputPurpose3" class="col-sm-2 control-label">Address</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="inputAddress3" placeholder="Address" ng-model="newProperty.address">
+                </div>
+              </div>
+    
+              <div class="form-group">
+                <label for="inputPurpose3" class="col-sm-2 control-label">Purpose</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="inputPurpose3" placeholder="Purpose" ng-model="newProperty.purpose">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="inputStatus3" class="col-sm-2 control-label">Status</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="inputStatus3" placeholder="Status" ng-model="newProperty.status">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                  <button type="button" class="btn btn-warning" data-dismiss="modal" ng-click="saveProperty();">Save</button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+    
+      </div>
+    </div>
+    
+    
+    <!-- Modal -->
+    <div id="myModalEdit" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+    
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Edit Property</h4>
+          </div>
+          <div class="modal-body">
+            <form class="form-horizontal">
+              <div class="form-group">
+                <label for="inputType3" class="col-sm-2 control-label">Type</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="inputType3" placeholder="Type" ng-model="clickedProperty.type">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="inputAddress3" class="col-sm-2 control-label">Address</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="inputAddress3" placeholder="Address" ng-model="clickedProperty.address">
+                </div>
+              </div>
+    
+              <div class="form-group">
+                <label for="inputPurpose3" class="col-sm-2 control-label">Purpose</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="inputPurpose3" placeholder="Purpose" ng-model="clickedProperty.purpose">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="inputStatus3" class="col-sm-2 control-label">Status</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="inputStatus3" placeholder="Status" ng-model="clickedProperty.status">
+                </div>
+              </div>
+               
+              <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                  <button type="button" class="btn btn-warning" data-dismiss="modal">DONE</button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">CLOSE</button>
+          </div>
+        </div>
+    
+      </div>
+    </div>
+    
+    <!-- Modal -->
+    <div id="myModalDelete" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+    
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Are You Sure?</h4>
+          </div>
+          <div class="modal-body">
+            <h4>Surely delete '{{clickedProperty.address}}'?</h4>
+            <br/>
+          </div>
+          <div class="modal-footer">
+          <button type="button" class="btn btn-danger pull-left" data-dismiss="modal" ng-click="deleteProperty()">YES</button>	      	
+            <button type="button" class="btn btn-warning pull-right" data-dismiss="modal">NO</button>
+          </div>
+        </div>
+    
+      </div>
+    </div>

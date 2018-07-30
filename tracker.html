@@ -1,0 +1,49 @@
+<div class="container">
+        <div class="row">
+                <div class="col">
+                        <div class="text-center" >
+                                <h1>{{tracker.heading}}</h1>
+                                          <a class="btn btn-warning" href="#">Home</a>
+                                          <a class="btn btn-danger" href="#!crud">CRUD</a>
+                        </div>
+                        <hr>
+                        <form>
+                            <div class="form-group">
+                              <input type="text" ng-model="type" placeholder="Enter Real Estate Type Here" class="form-control">
+                            </div>
+    
+                        </form>
+                        <hr>
+    
+                        <table class="gridtable">
+                                <thead ng-show="!validTable">
+                                  <tr>
+                                    <th>TYPE</th>
+                                    <th>ADDRESS</th>
+                                    <th>PURPOSE</th>
+                                    <th>STATUS</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                        <tr ng-repeat="property in properties| filter:type">
+                                          <td>{{property.type}}</td>
+                                          <td>{{property.address}}</td>
+                                          <td>{{property.purpose}}</td>
+                                          <td>{{property.status}}</td>
+                                        </tr>		      
+                                      </tbody>
+                              </table>
+            </div>
+        </div>
+        <hr>
+        <!-- Footer -->
+        <footer id="footer">
+            <p>Made by <a href="https://www.facebook.com/galib.shams">Galib Shams Sunny</a>.</p>
+            <p>Code released under the <a href="https://github.com">Github</a>.</p>
+            <p>© 2018 Copyright:
+                    <a href="https://www.google.com"> MyRealEstate.com.au</a>
+            </p>
+
+        </footer>
+<!-- Footer -->
+    </div>
